@@ -35,11 +35,6 @@ variable "runtime" {
   default     = "python3.0"
 }
 
-variable "filename" {
-  description = "Path to lambda code inside the repo"
-  type        = string
-}
-
 variable "common_tags" {
   description = "Map of common tags"
   type        = map(any)

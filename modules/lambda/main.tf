@@ -42,7 +42,7 @@ data "archive_file" "zip_the_python" {
 }
 
 resource "aws_lambda_function" "lambda" {
-  filename = var.filename
+  filename     = data.archive_file.zip_the_python.output_path
 
   function_name = var.lambda_function_name
   handler       = var.lambda_handler
