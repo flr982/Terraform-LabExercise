@@ -1,4 +1,4 @@
-name: Terraform Deploy Any env and any region
+name: Terraform Destroy Any env and any region
 
 on:
   workflow_dispatch:
