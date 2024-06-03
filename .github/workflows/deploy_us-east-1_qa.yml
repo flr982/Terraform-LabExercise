@@ -33,7 +33,7 @@ jobs:
 
       - name: Initialize Terraform
         working-directory: ./regions/us-east-1/qa
-        run: terraform init
+        run: terraform init -backend-config="bucket=${{ secrets.TF_VAR_STATE_BUCKET }}"
 
       - name: Validate Terraform
         working-directory: ./regions/us-east-1/qa

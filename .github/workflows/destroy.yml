@@ -42,7 +42,7 @@ jobs:
         terraform_version: 1.3.7
 
     - name: Initialize Terraform
-      run: terraform init
+      run: terraform init -backend-config="bucket=${{ secrets.TF_VAR_STATE_BUCKET }}"
       working-directory: ./regions/${{ github.event.inputs.region }}/${{ github.event.inputs.environment }}
 
     - name: Destroy Terraform

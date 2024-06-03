@@ -42,7 +42,7 @@ jobs:
         aws-region: ${{ env.AWS_REGION }}
 
     - name: Initialize Terraform
-      run: terraform init
+      run: terraform init -backend-config="bucket=${{ secrets.TF_VAR_STATE_BUCKET }}"
       working-directory: ./regions/${{ github.event.inputs.region }}/${{ github.event.inputs.environment }}
 
     - name: Validate Terraform
