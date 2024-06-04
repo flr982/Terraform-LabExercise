@@ -23,7 +23,7 @@ locals {
 }
 
 module "network" {
-  source          = "../../../modules/network"
+  source          = "../modules/network"
   vpc_cidr        = var.vpc_cidr
   subnet_cidrs    = var.subnet_cidrs
   security_groups = var.security_groups
@@ -34,7 +34,7 @@ module "network" {
 }
 
 module "ec2" {
-  source             = "../../../modules/ec2"
+  source             = "../modules/ec2"
   project            = var.project
   env                = var.env
   aws_region         = var.region
@@ -46,7 +46,7 @@ module "ec2" {
 }
 
 module "s3" {
-  source              = "../../../modules/s3"
+  source              = "../modules/s3"
   bucket_name         = local.bucket_name
   versioning          = var.versioning
   block_public_access = var.block_public_access
@@ -54,7 +54,7 @@ module "s3" {
 }
 
 module "lambda" {
-  source               = "../../../modules/lambda"
+  source               = "../modules/lambda"
   project              = var.project
   env                  = var.env
   aws_region           = var.region

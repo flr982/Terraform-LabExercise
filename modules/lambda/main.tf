@@ -37,8 +37,8 @@ resource "aws_iam_role_policy_attachment" "lambda_s3_access_attachment" {
 
 data "archive_file" "zip_the_python" {
   type        = "zip"
-  source_dir  = "../../../modules/python/"
-  output_path = "../../../modules/rolecall.zip"
+  source_dir  = "../modules/python/"
+  output_path = "../modules/rolecall.zip"
 }
 
 resource "aws_lambda_function" "lambda" {
