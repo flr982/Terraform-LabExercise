@@ -53,10 +53,9 @@ jobs:
       working-directory: ./regions/${{ github.event.inputs.region }}/${{ github.event.inputs.environment }}
 
     - name: Plan Terraform
-      run: terraform plan -var-file=${{ github.event.inputs.environment }}.tfvars -out=plan.tfplan
+      run: terraform plan -var-file=${{ github.event.inputs.environment }}.tfvars -out=tfplan
       working-directory: ./regions/${{ github.event.inputs.region }}/${{ github.event.inputs.environment }}
 
     - name: Apply Terraform
-      if: github.event.inputs.environment == 'qa'
-      run: terraform apply -var-file=${{ github.event.inputs.environment }}.tfvars -auto-approve plan.tfplan
+      run: terraform apply tfplan
       working-directory: ./regions/${{ github.event.inputs.region }}/${{ github.event.inputs.environment }}
