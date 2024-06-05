@@ -1,4 +1,4 @@
-name: Terraform Deploy qa/staging/prod in us-east-1 and us-west-1
+name: Terraform Deploy qa/staging/prod in us-east-1 and us-west-2
 
 on:
   workflow_dispatch:
@@ -10,7 +10,7 @@ on:
         type: choice
         options:
           - us-east-1
-          - us-west-1
+          - us-west-2
       environment:
         description: 'Environment'
         required: true
