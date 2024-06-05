@@ -29,7 +29,7 @@ security_groups = {
 
 
 #EC2
-ami_id        = "ami-0a2781a262879e465"
+ami_id        = "ami-0eb9d67c52f5c80e5"
 instance_type = "t2.micro"
 
 #S3
