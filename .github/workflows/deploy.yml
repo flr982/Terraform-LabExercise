@@ -46,7 +46,7 @@ jobs:
       run: pip install checkov
 
     - name: Run Checkov scan
-      run: checkov -d ./regions/${{ github.event.inputs.region }}/${{ github.event.inputs.environment }}
+      run: checkov -d ./infra
 
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v2
